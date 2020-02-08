@@ -1,51 +1,42 @@
 <template>
-  <a-locale-provider :locale="zhCN">
+  <a-locale-provider :locale="locale">
     <div id="app">
-      <img src="./assets/logo.png" />
-      <div>
-        <p>
-          If Ant-Design-Vue is successfully added to this project, you'll see an
-          <code v-text="'<a-button>'"></code>
-          <code v-text="'<a-pagination>'"></code>
-          below
-        </p>
-        <a-button type="primary">Primary</a-button>
-        <a-pagination
-          size="small"
-          :total="50"
-          show-size-changer
-          show-quick-jumper
-        />
-      </div>
-      <HelloWorld msg="Welcome to Your Vue.js App" />
+      <router-view />
     </div>
   </a-locale-provider>
 </template>
-
-<script>
+<script lang="ts">
+import { Component, Vue, Watch } from "vue-property-decorator";
+import { Getter } from "vuex-class";
 import zhCN from "ant-design-vue/lib/locale-provider/zh_CN";
-import HelloWorld from "./components/HelloWorld.vue";
+import "moment/locale/zh-cn";
 
-export default {
-  name: "App",
-  data() {
-    return {
-      zhCN
-    };
-  },
-  components: {
-    HelloWorld
+@Component({
+  components: {}
+})
+export default class App extends Vue {
+  public locale: any = zhCN;
+  @Getter language?: string;
+
+  @Getter("token") token?: string;
+
+  @Watch("$route.path")
+  routePathChange(val: any) {
+    const isUserPage = val.indexOf("/user") == 0 || val.indexOf("/test") == 0;
+    const token = this.token;
+    if (!token && !isUserPage) {
+      this.$router.push({ path: "/user" });
+    }
   }
-};
+}
 </script>
-
-<style>
+<style lang="less">
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  height: 100%;
+}
+/**这个样式很奇特吧 */
+.uuid_no_show {
+  position: fixed;
+  bottom: -10000px;
 }
 </style>

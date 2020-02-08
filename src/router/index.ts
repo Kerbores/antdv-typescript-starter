@@ -1,14 +1,25 @@
 import Vue from "vue";
-import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Router, { Route } from "vue-router";
+import UserLayout from "@/layout/UserLayout.vue";
 
-Vue.use(VueRouter);
+Vue.use(Router);
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home
+    redirect: "/user"
+  },
+  {
+    path: "/user",
+    component: UserLayout,
+    redirect: "/user/login",
+    children: [
+      {
+        path: "login",
+        name: "login",
+        component: () => import("@/views/user/Login.vue")
+      }
+    ]
   },
   {
     path: "/about",
@@ -21,7 +32,7 @@ const routes = [
   }
 ];
 
-const router = new VueRouter({
+const router = new Router({
   routes
 });
 
