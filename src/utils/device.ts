@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import enquireJs from "enquire.js";
 
 export enum DEVICE_TYPE {

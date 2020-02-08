@@ -1,6 +1,14 @@
 import Vue from "vue";
 import Router, { Route } from "vue-router";
 import UserLayout from "@/layout/UserLayout.vue";
+import "@/components/NProgress/nprogress.less"; // progress bar custom style
+import NProgress from "nprogress";
+import { Position, RawLocation } from "vue-router/types/router";
+import * as types from "@/store/mutation-types";
+import Utils from "@/utils/util";
+import config from "@/core/config";
+
+NProgress.configure({ showSpinner: false });
 
 Vue.use(Router);
 
@@ -33,7 +41,31 @@ const routes = [
 ];
 
 const router = new Router({
+  scrollBehavior(to: Route, from: Route, savedPosition: void | Position) {
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      if (from.meta.keepAlive) {
+        return { x: 0, y: from.meta.savedPosition };
+      }
+      return { x: 0, y: to.meta.savedPosition || 0 };
+    }
+  },
   routes
+});
+
+router.beforeEach(
+  (to: Route, from: Route, next: (to?: RawLocation | false | void) => void) => {
+    if (to.path !== from.path) {
+      NProgress.start();
+      Utils.setDocumentTitle(config.title);
+    }
+    next();
+  }
+);
+
+router.afterEach(() => {
+  NProgress.done();
 });
 
 export default router;

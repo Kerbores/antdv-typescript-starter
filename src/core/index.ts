@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Vue from "vue";
 import * as types from "@/store/mutation-types";
 import { AppModule } from "@/store/modules/app";

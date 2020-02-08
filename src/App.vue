@@ -6,6 +6,7 @@
   </a-locale-provider>
 </template>
 <script lang="ts">
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, Vue, Watch } from "vue-property-decorator";
 import { Getter } from "vuex-class";
 import { Initializer } from "./core";
