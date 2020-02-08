@@ -2,7 +2,7 @@
   <div>Login</div>
 </template>
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 @Component({
   components: {}
 })

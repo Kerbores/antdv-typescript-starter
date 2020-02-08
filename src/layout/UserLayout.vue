@@ -22,11 +22,11 @@
   </div>
 </template>
 <script lang="ts">
-import { Prop, Vue, Mixins } from "vue-property-decorator";
+import { Mixins } from "vue-property-decorator";
 import RouteView from "./RouteView.vue";
 import { Mixin } from "@/utils/mixin";
 import { State } from "vuex-class";
-import Component, { mixins } from "vue-class-component";
+import Component from "vue-class-component";
 @Component({
   components: { RouteView }
 })
