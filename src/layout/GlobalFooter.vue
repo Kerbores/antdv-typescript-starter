@@ -20,7 +20,6 @@
 <script lang="ts">
 import { Component, Mixins } from "vue-property-decorator";
 import { Mixin } from "@/utils/mixin";
-import { AppModule } from "../store/modules/app";
 
 @Component
 export default class Footer extends Mixins(Mixin) {}

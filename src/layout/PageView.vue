@@ -69,7 +69,7 @@
   </div>
 </template>
 <script lang="ts">
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, Prop, Mixins, Watch } from "vue-property-decorator";
 import PageHeader from "@/components/PageHeader";
 import { Mixin } from "../utils/mixin";

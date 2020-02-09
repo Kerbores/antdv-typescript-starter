@@ -53,7 +53,7 @@
 </template>
 
 <script lang="ts">
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, Prop, Emit, Mixins } from "vue-property-decorator";
 import { Getter, Action } from "vuex-class";
 import { Mixin, DeviceMixin } from "@/utils/mixin";

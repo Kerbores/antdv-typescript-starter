@@ -11,7 +11,7 @@
   </a-breadcrumb>
 </template>
 <script lang="ts">
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, Vue, Watch } from "vue-property-decorator";
 @Component({
   components: {}
