@@ -125,7 +125,7 @@ export default class Login extends Vue {
     this.$message.error("验证失败");
   }
   onRefresh() {
-    this.state.disabled = false;
+    this.state.disabled = true;
   }
 
   handleSubmit() {
