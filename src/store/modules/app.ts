@@ -25,6 +25,7 @@ export interface AppState {
   colorWeak: boolean;
   multiTab: boolean;
   language: string;
+  name: string;
   title: string;
   description: string;
   uuid: string;
@@ -44,6 +45,7 @@ class App extends VuexModule implements AppState {
   public fixSiderbar = config.fixSiderbar;
   public multiTab = config.multiTab;
   public language = config.language;
+  public name = config.name;
   public title = config.title;
   public description = config.description;
   public copyright = config.copyright;

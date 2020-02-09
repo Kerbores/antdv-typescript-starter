@@ -5,7 +5,7 @@
         <div class="header">
           <a href="/">
             <img src="~@/assets/logo.png" class="logo" alt="logo" />
-            <span class="title">{{ AppModule.title }}</span>
+            <span class="title">{{ AppModule.name }}</span>
           </a>
         </div>
         <div class="desc">

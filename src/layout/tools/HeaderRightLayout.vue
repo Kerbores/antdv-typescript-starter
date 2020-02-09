@@ -63,7 +63,6 @@
         </a-menu>
       </a-dropdown>
     </div>
-    <CodeGenerator ref="codeGenerator" />
   </div>
 </template>
 

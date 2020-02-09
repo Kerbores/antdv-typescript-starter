@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Logo v-if="mode !== 'horizontal'" :title="AppModule.title" />
+    <Logo v-if="mode !== 'horizontal'" :title="AppModule.name" />
     <a-menu
       :selected-keys="selectedKeys"
       :open-keys="openKeys || []"

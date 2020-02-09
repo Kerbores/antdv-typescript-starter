@@ -9,7 +9,7 @@ export default {
   colorWeak: false,
   multiTab: false,
   language: "zhCN",
-  name: "antdv typescript starter",
+  name: "ATS",
   title: "ATS(antdv typescript starter)",
   description: "基于typescript 开发 ant design vue 应用的一键启动器",
   copyright: "Copyright &copy;  ats.kerbores.com",

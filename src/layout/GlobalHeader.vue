@@ -32,7 +32,7 @@
               <Logo
                 class="top-nav-header"
                 :show-title="!isMobile()"
-                :title="AppModule.title"
+                :title="AppModule.name"
               />
               <sider-menu v-if="!isMobile()" mode="horizontal" />
               <a-icon
