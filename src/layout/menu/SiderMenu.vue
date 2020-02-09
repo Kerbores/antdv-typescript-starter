@@ -34,6 +34,7 @@ import { Component, Prop, Watch, Mixins, Emit } from "vue-property-decorator";
 import { Mixin, DeviceMixin } from "@/utils/mixin";
 import SubMenu from "./SubMenu.vue";
 import Logo from "../tools/Logo.vue";
+import { check } from "@/utils/auth";
 
 @Component({
   components: {
@@ -113,8 +114,7 @@ export default class SiderMenu extends Mixins(Mixin, DeviceMixin) {
   ): any {
     const menuData: any = [];
     for (const item of routes) {
-      //&& !check(item.meta.authority)
-      if (item.meta && item.meta.authority) {
+      if (item.meta && item.meta.authority && !check(item.meta.authority)) {
         continue;
       }
       if (item.name && !item.meta.hideInMenu) {
