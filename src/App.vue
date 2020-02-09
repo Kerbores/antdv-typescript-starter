@@ -30,7 +30,7 @@ export default class App extends Vue {
     const isUserPage = val.indexOf("/user") == 0 || val.indexOf("/test") == 0;
     const token = this.token;
     if (!token && !isUserPage) {
-      // this.$router.push({ path: "/user" });
+      this.$router.push({ path: "/user" });
     }
   }
 }

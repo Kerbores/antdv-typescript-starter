@@ -54,6 +54,7 @@
       <a-form-item>
         <div style="width:100%">
           <SlideVerify
+            ref="slideVerify"
             :length="42"
             :radius="10"
             :width="formWidth"
@@ -84,12 +85,13 @@
 </template>
 <script lang="ts">
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Mixins } from "vue-property-decorator";
 import SlideVerify from "@/components/SlideVerify/";
+import { Mixin } from "@/utils/mixin";
 @Component({
   components: { SlideVerify }
 })
-export default class Login extends Vue {
+export default class Login extends Mixins(Mixin) {
   public form!: any;
 
   public formWidth = 310;
@@ -128,8 +130,39 @@ export default class Login extends Vue {
     this.state.disabled = true;
   }
 
-  handleSubmit() {
-    console.log("submit");
+  handleSubmit(e: any) {
+    e.preventDefault();
+    const {
+      form: { validateFields },
+      UserModule: { login },
+      state
+    } = this;
+    state.loading = true;
+    validateFields(
+      ["user", "password"],
+      { force: true },
+      (err: any, values: { user: string; password: string }) => {
+        if (!err) {
+          login({
+            avatarUrl: "",
+            created: "",
+            email: "",
+            fullName: "",
+            id: 0,
+            jwtToken: Math.random().toString(),
+            lastLogin: "",
+            userName: values.user,
+            roles: [],
+            permissions: []
+          });
+          state.loading = false;
+          this.$router.push({ path: "/index" });
+        } else {
+          (this.$refs.slideVerify as SlideVerify).refresh();
+          state.loading = false;
+        }
+      }
+    );
   }
 }
 </script>
