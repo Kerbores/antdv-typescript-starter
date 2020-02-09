@@ -1,3 +1,4 @@
+import Vue from "vue";
 import {
   VuexModule,
   Module,
@@ -6,6 +7,7 @@ import {
   getModule
 } from "vuex-module-decorators";
 import store from "@/store";
+import * as types from "@/store/mutation-types";
 
 export interface UserState {
   avatarUrl: string;
@@ -44,6 +46,7 @@ class User extends VuexModule implements UserState {
 
   @Mutation
   public login(user: UserState) {
+    Vue.ls.set(types.LOGIN_USER, user);
     Object.assign(this, user);
   }
 

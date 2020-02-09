@@ -9,6 +9,10 @@ import config from "@/core/config";
 import BasicLayout from "@/layout/BasicLayout.vue";
 
 NProgress.configure({ showSpinner: false });
+const originalPush = Router.prototype.push;
+// Router.prototype.push = function push(location: RawLocation) {
+//   return originalPush(location).catch(error => error);
+// };
 
 Vue.use(Router);
 

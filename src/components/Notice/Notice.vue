@@ -12,7 +12,7 @@
       <template slot="content">
         <a-spin :spinning="loading">
           <a-tabs>
-            <a-tab-pane :tab="$t('notice.notice')" key="1">
+            <a-tab-pane :tab="$t('global.notice.notice')" key="1">
               <a-list>
                 <a-list-item>
                   <a-list-item-meta
@@ -56,8 +56,10 @@
                 </div>
               </a-list>
             </a-tab-pane>
-            <a-tab-pane :tab="$t('notice.message')" key="2">123</a-tab-pane>
-            <a-tab-pane :tab="$t('notice.todo')" key="3">123</a-tab-pane>
+            <a-tab-pane :tab="$t('global.notice.message')" key="2"
+              >123</a-tab-pane
+            >
+            <a-tab-pane :tab="$t('global.notice.todo')" key="3">123</a-tab-pane>
           </a-tabs>
         </a-spin>
       </template>

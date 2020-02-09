@@ -25,20 +25,20 @@
           <a-menu-item key="0" :style="contentWith">
             <router-link :to="{ name: 'center' }">
               <a-icon type="user" />
-              <span>{{ $t("header.userCenter") }}</span>
+              <span>{{ $t("global.header.userCenter") }}</span>
             </router-link>
           </a-menu-item>
           <a-menu-item key="1" :style="contentWith">
             <router-link :to="{ name: 'settings' }">
               <a-icon type="setting" />
-              <span>{{ $t("header.settings") }}</span>
+              <span>{{ $t("global.header.settings") }}</span>
             </router-link>
           </a-menu-item>
           <a-menu-divider />
           <a-menu-item key="3" :style="contentWith">
             <a href="javascript:;" @click="doLogout">
               <a-icon type="logout" />
-              <span>{{ $t("header.logout") }}</span>
+              <span>{{ $t("global.header.logout") }}</span>
             </a>
           </a-menu-item>
         </a-menu>
@@ -100,10 +100,10 @@ export default class HeaderRightLayout extends Mixins(DeviceMixin) {
    * doLogout
    */
   public doLogout() {
-    const confirm = this.$t("header.confirm");
-    const confirmMessage = this.$t("header.confirmMessage");
-    const ok = this.$t("header.ok") as string;
-    const cancle = this.$t("header.cancle") as string;
+    const confirm = this.$t("global.header.confirm");
+    const confirmMessage = this.$t("global.header.confirmMessage");
+    const ok = this.$t("global.header.ok") as string;
+    const cancle = this.$t("global.header.cancle") as string;
     this.$confirm({
       title: confirm,
       content: confirmMessage,

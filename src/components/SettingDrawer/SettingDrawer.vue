@@ -17,12 +17,12 @@
       <div class="setting-drawer-index-content">
         <div style="margin-bottom:24px;">
           <h3 class="setting-drawer-index-title">
-            {{ $t("settingDrawer.pageStyleTitle") }}
+            {{ $t("global.settingDrawer.pageStyleTitle") }}
           </h3>
           <div class="setting-drawer-index-blockChecbox">
             <a-tooltip>
               <template slot="title">
-                {{ $t("settingDrawer.dartTooltipTitle") }}
+                {{ $t("global.settingDrawer.dartTooltipTitle") }}
               </template>
               <div
                 class="setting-drawer-index-item"
@@ -42,7 +42,7 @@
             </a-tooltip>
             <a-tooltip>
               <template slot="title">
-                {{ $t("settingDrawer.lightTooltipTitle") }}
+                {{ $t("global.settingDrawer.lightTooltipTitle") }}
               </template>
               <div
                 class="setting-drawer-index-item"
@@ -65,7 +65,7 @@
 
         <div style="margin-bottom: '24px';">
           <h3 class="setting-drawer-index-title">
-            {{ $t("settingDrawer.themeTitle") }}
+            {{ $t("global.settingDrawer.themeTitle") }}
           </h3>
           <div style="height: 20px">
             <a-tooltip
@@ -74,7 +74,7 @@
               :key="index"
             >
               <template slot="title">{{
-                $t(`settingDrawer.${item.key}`)
+                $t(`global.settingDrawer.${item.key}`)
               }}</template>
               <a-tag :color="item.color" @click="handleChangeColor(item.color)">
                 <a-icon
@@ -88,12 +88,12 @@
         <a-divider />
         <div style="margin-bottom:24px;">
           <h3 class="setting-drawer-index-title">
-            {{ $t("settingDrawer.layoutTitle") }}
+            {{ $t("global.settingDrawer.layoutTitle") }}
           </h3>
           <div class="setting-drawer-index-blockChecbox">
             <a-tooltip>
               <template slot="title">{{
-                $t("settingDrawer.sideMenuTitle")
+                $t("global.settingDrawer.sideMenuTitle")
               }}</template>
               <div
                 class="setting-drawer-index-item"
@@ -113,7 +113,7 @@
             </a-tooltip>
             <a-tooltip>
               <template slot="title">{{
-                $t("settingDrawer.topMenuTitle")
+                $t("global.settingDrawer.topMenuTitle")
               }}</template>
               <div
                 class="setting-drawer-index-item"
@@ -144,19 +144,19 @@
                     @change="handleContentWidthChange"
                   >
                     <a-select-option value="Fixed">{{
-                      $t("settingDrawer.fixed")
+                      $t("global.settingDrawer.fixed")
                     }}</a-select-option>
 
                     <a-select-option
                       value="Fluid"
                       v-if="layoutMode !== 'sidemenu'"
-                      >{{ $t("settingDrawer.flux") }}</a-select-option
+                      >{{ $t("global.settingDrawer.flux") }}</a-select-option
                     >
                   </a-select>
                 </a-tooltip>
                 <a-list-item-meta>
                   <div slot="title">
-                    {{ $t("settingDrawer.contentWidth") }}
+                    {{ $t("global.settingDrawer.contentWidth") }}
                   </div>
                 </a-list-item-meta>
               </a-list-item>
@@ -169,7 +169,9 @@
                   @change="handleFixedHeader"
                 />
                 <a-list-item-meta>
-                  <div slot="title">{{ $t("settingDrawer.fixHeader") }}</div>
+                  <div slot="title">
+                    {{ $t("global.settingDrawer.fixHeader") }}
+                  </div>
                 </a-list-item-meta>
               </a-list-item>
               <a-list-item>
@@ -183,12 +185,12 @@
                 <a-list-item-meta>
                   <a-tooltip slot="title" placement="left">
                     <template slot="title">{{
-                      $t("settingDrawer.effectiveWhenFixHeader")
+                      $t("global.settingDrawer.effectiveWhenFixHeader")
                     }}</template>
                     <div
                       :style="{ opacity: !AppModule.fixedHeader ? '0.5' : '1' }"
                     >
-                      {{ $t("settingDrawer.hideHeaderWhenSliding") }}
+                      {{ $t("global.settingDrawer.hideHeaderWhenSliding") }}
                     </div>
                   </a-tooltip>
                 </a-list-item-meta>
@@ -209,7 +211,7 @@
                         layoutMode === 'topmenu' ? 'line-through' : 'unset'
                     }"
                   >
-                    {{ $t("settingDrawer.fixedSideMenu") }}
+                    {{ $t("global.settingDrawer.fixedSideMenu") }}
                   </div>
                 </a-list-item-meta>
               </a-list-item>
@@ -220,7 +222,7 @@
 
         <div :style="{ marginBottom: '24px' }">
           <h3 class="setting-drawer-index-title">
-            {{ $t("settingDrawer.other") }}
+            {{ $t("global.settingDrawer.other") }}
           </h3>
           <div>
             <a-list :split="false">
@@ -233,7 +235,7 @@
                 />
                 <a-list-item-meta>
                   <div slot="title">
-                    {{ $t("settingDrawer.colorWeakMode") }}
+                    {{ $t("global.settingDrawer.colorWeakMode") }}
                   </div>
                 </a-list-item-meta>
               </a-list-item>
@@ -245,7 +247,9 @@
                   @change="onMultiTab"
                 />
                 <a-list-item-meta>
-                  <div slot="title">{{ $t("settingDrawer.multiTabMode") }}</div>
+                  <div slot="title">
+                    {{ $t("global.settingDrawer.multiTabMode") }}
+                  </div>
                 </a-list-item-meta>
               </a-list-item>
             </a-list>
