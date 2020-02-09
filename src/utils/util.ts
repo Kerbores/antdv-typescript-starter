@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export default {
   setDocumentTitle(title: string) {
     document.title = title;
@@ -14,5 +15,11 @@ export default {
       };
       document.body.appendChild(i);
     }
+  },
+  triggerWindowResizeEvent() {
+    const event: any = document.createEvent("HTMLEvents");
+    event.initEvent("resize", true, true);
+    event.eventType = "message";
+    window.dispatchEvent(event);
   }
 };
