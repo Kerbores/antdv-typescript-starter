@@ -4,7 +4,6 @@ import UserLayout from "@/layout/UserLayout.vue";
 import "@/components/NProgress/nprogress.less"; // progress bar custom style
 import NProgress from "nprogress";
 import { Position, RawLocation } from "vue-router/types/router";
-import * as types from "@/store/mutation-types";
 import Utils from "@/utils/util";
 import config from "@/core/config";
 import BasicLayout from "@/layout/BasicLayout.vue";
