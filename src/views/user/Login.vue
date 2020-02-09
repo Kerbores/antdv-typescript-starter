@@ -74,8 +74,8 @@
           type="primary"
           html-type="submit"
           class="login-button"
-          :loading="state.loginBtn"
-          :disabled="state.loginBtn"
+          :loading="state.loading"
+          :disabled="state.disabled"
           >确定</a-button
         >
       </a-form-item>
@@ -98,14 +98,12 @@ export default class Login extends Vue {
 
   public state: {
     time: number;
-    loginBtn: boolean;
-    loginType: "user" | "email";
-    smsSendBtn: boolean;
+    loading: boolean;
+    disabled: boolean;
   } = {
     time: 60,
-    loginBtn: true,
-    loginType: "user",
-    smsSendBtn: false
+    loading: false,
+    disabled: true
   };
 
   beforeCreate() {
@@ -119,15 +117,15 @@ export default class Login extends Vue {
   }
 
   onSuccess() {
-    this.state.loginBtn = false;
+    this.state.disabled = false;
     this.$message.success("验证成功");
   }
   onFail() {
-    this.state.loginBtn = true;
+    this.state.disabled = true;
     this.$message.error("验证失败");
   }
   onRefresh() {
-    this.state.loginBtn = true;
+    this.state.disabled = false;
   }
 
   handleSubmit() {
