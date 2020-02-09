@@ -50,5 +50,15 @@ export default {
     other: "其他设置",
     colorWeakMode: "色弱模式",
     multiTabMode: "多页签模式"
+  },
+  http: {
+    networkError: "网络错误",
+    networkErrorDesc: "请检查网络连接是否异常",
+    timeoutError: "请求超时",
+    timeoutErrorDesc: "请求已超时，请稍后重试",
+    forbidden: "禁止访问该资源",
+    error: "错误提示",
+    configError: "配置错误",
+    notFount: "请求的资源不存在"
   }
 } as Global;

@@ -22,6 +22,7 @@ export default class App extends Vue {
   @Getter("token") token?: string;
 
   beforeCreate() {
+    console.log(this.$api);
     Initializer(false);
   }
 
