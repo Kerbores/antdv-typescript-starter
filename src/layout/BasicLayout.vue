@@ -136,7 +136,7 @@ export default class BasicLayout extends Mixins(Mixin, DeviceMixin) {
 </script>
 
 <style lang="less">
-@import url("../styles/global.less");
+@import url("../style/global.less");
 .page-transition-enter {
   opacity: 0;
 }

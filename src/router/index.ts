@@ -7,6 +7,7 @@ import { Position, RawLocation } from "vue-router/types/router";
 import * as types from "@/store/mutation-types";
 import Utils from "@/utils/util";
 import config from "@/core/config";
+import BasicLayout from "@/layout/BasicLayout.vue";
 
 NProgress.configure({ showSpinner: false });
 
@@ -26,6 +27,28 @@ const routes = [
         path: "login",
         name: "login",
         component: () => import("@/views/user/Login.vue")
+      }
+    ]
+  },
+  {
+    path: "/index",
+    name: "index",
+    component: BasicLayout,
+    meta: {
+      title: "index",
+      icon: "home"
+    },
+    redirect: "/dashboard",
+    children: [
+      {
+        path: "/dashboard",
+        name: "dashboard",
+        component: () => import("@/views/About.vue"),
+        meta: {
+          title: "dashboard",
+          keepAlive: true,
+          icon: "dashboard"
+        }
       }
     ]
   },
