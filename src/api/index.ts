@@ -1,7 +1,9 @@
 import { PluginObject } from "vue";
 
+import { default as apmpApi, ApmpApi } from "./apmp/mods";
+
 export interface Api {
-  name: string;
+  apmpApi: ApmpApi;
 }
 
 export const ApiPlugin: PluginObject<Api> = {
@@ -10,7 +12,7 @@ export const ApiPlugin: PluginObject<Api> = {
       $api: {
         get() {
           return {
-            name: "api"
+            apmpApi
           };
         }
       }
