@@ -3,6 +3,18 @@ export interface Global {
   multitab: Multitab;
   notice: Notice;
   settingDrawer: SettingDrawer;
+  http: Http;
+}
+
+export interface Http {
+  networkError: string;
+  networkErrorDesc: string;
+  timeoutError: string;
+  timeoutErrorDesc: string;
+  forbidden: string;
+  error: string;
+  configError: string;
+  notFount: string;
 }
 
 export interface SettingDrawer {
