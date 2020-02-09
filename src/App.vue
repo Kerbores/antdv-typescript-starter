@@ -1,32 +1,48 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <a-locale-provider :locale="locale">
+    <div id="app">
+      <router-view />
     </div>
-    <router-view />
-  </div>
+  </a-locale-provider>
 </template>
+<script lang="ts">
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Component, Vue, Watch } from "vue-property-decorator";
+import { Getter } from "vuex-class";
+import { Initializer } from "./core";
+import zhCN from "ant-design-vue/lib/locale-provider/zh_CN";
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+@Component({
+  components: {}
+})
+export default class App extends Vue {
+  public locale: any = zhCN;
+  @Getter language?: string;
 
-#nav {
-  padding: 30px;
+  @Getter("token") token?: string;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  beforeCreate() {
+    console.log(this.$api);
+    Initializer(false);
+  }
 
-    &.router-link-exact-active {
-      color: #42b983;
+  @Watch("$route.path")
+  routePathChange(val: any) {
+    const isUserPage = val.indexOf("/user") == 0 || val.indexOf("/test") == 0;
+    const token = this.token;
+    if (!token && !isUserPage) {
+      this.$router.push({ path: "/user" });
     }
   }
+}
+</script>
+<style lang="less">
+#app {
+  height: 100%;
+}
+/**这个样式很奇特吧 */
+.uuid_no_show {
+  position: fixed;
+  bottom: -10000px;
 }
 </style>

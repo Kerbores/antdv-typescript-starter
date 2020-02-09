@@ -1,0 +1,12 @@
+{
+  "originUrl": "",
+  "outDir": "./src/api",
+  "templatePath": "./serviceTemplate",
+  "usingMultipleOrigins": true,
+  "origins": [
+    {
+      "name": "apmp",
+      "originUrl": "http://127.0.0.1:8888/v2/api-docs"
+    }
+  ]
+}
