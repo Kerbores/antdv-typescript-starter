@@ -6,10 +6,11 @@
   </a-locale-provider>
 </template>
 <script lang="ts">
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, Vue, Watch } from "vue-property-decorator";
 import { Getter } from "vuex-class";
+import { Initializer } from "./core";
 import zhCN from "ant-design-vue/lib/locale-provider/zh_CN";
-import "moment/locale/zh-cn";
 
 @Component({
   components: {}
@@ -19,6 +20,10 @@ export default class App extends Vue {
   @Getter language?: string;
 
   @Getter("token") token?: string;
+
+  beforeCreate() {
+    Initializer(false);
+  }
 
   @Watch("$route.path")
   routePathChange(val: any) {

@@ -5,7 +5,7 @@
         <div class="header">
           <a href="/">
             <img src="~@/assets/logo.png" class="logo" alt="logo" />
-            <span class="title">{{ AppModule.title }}</span>
+            <span class="title">{{ AppModule.name }}</span>
           </a>
         </div>
         <div class="desc">
@@ -22,11 +22,11 @@
   </div>
 </template>
 <script lang="ts">
-import { Prop, Vue, Mixins } from "vue-property-decorator";
+import { Mixins } from "vue-property-decorator";
 import RouteView from "./RouteView.vue";
 import { Mixin } from "@/utils/mixin";
 import { State } from "vuex-class";
-import Component, { mixins } from "vue-class-component";
+import Component from "vue-class-component";
 @Component({
   components: { RouteView }
 })
