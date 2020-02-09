@@ -126,7 +126,7 @@ export default class HeaderRightLayout extends Mixins(DeviceMixin) {
 
   private localeChange() {
     return this.$message
-      .loading(this.$t("globalHeader.message"), 1)
+      .loading(this.$t("global.header.compilingLanguage"), 1)
       .then(async () => {
         this.$i18n.locale = this.language === "enUS" ? "zhCN" : "enUS";
         this.toggleLanguage &&
