@@ -289,7 +289,11 @@ export default class SettingDrawer extends Mixins(Mixin) {
   private handleChangeColor(color: string): void {
     if (this.primaryColor !== color) {
       this.togglePrimaryColor(color);
-      updateTheme(true, color, "正在切换主题");
+      updateTheme(
+        true,
+        color,
+        this.$t(`global.header.compilingTheme`).toString()
+      );
     }
   }
   private handleChangeLayout(layout: string): void {

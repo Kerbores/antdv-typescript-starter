@@ -107,7 +107,7 @@ export default class MultiTab extends Vue {
         }
       });
     } else {
-      this.$message.info("左侧没有标签");
+      this.$message.info(this.$t("global.multitab.leftHasNoTag"));
     }
   }
   closeRight(e: any) {
@@ -119,7 +119,7 @@ export default class MultiTab extends Vue {
         }
       });
     } else {
-      this.$message.info("右侧没有标签");
+      this.$message.info(this.$t("global.multitab.rightHasNoTag"));
     }
   }
   closeAll(e: any) {
