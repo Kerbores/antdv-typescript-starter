@@ -139,9 +139,9 @@ export default class HeaderRightLayout extends Mixins(DeviceMixin) {
         );
         let title: string;
         if (record) {
-          title = `${record.meta.localeTitle} - ZEUS`;
+          title = `${record.meta.localeTitle} - ${this.AppModule.name}`;
         } else {
-          title = "ZEUS";
+          title = this.AppModule.name;
         }
         Utils.setDocumentTitle(title);
       });

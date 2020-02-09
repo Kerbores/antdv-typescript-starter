@@ -1,7 +1,9 @@
 <template>
   <div class="footer">
     <div class="links">
-      <a href="https://ccf.chinare.com.cn/" target="_blank">ZEUS</a>
+      <a href="https://ccf.chinare.com.cn/" target="_blank">{{
+        AppModule.name
+      }}</a>
       <a
         href="https://git.chinarecrm.com.cn/EXPLORATION/chinare-cloud"
         target="_blank"
@@ -18,6 +20,7 @@
 <script lang="ts">
 import { Component, Mixins } from "vue-property-decorator";
 import { Mixin } from "@/utils/mixin";
+import { AppModule } from "../store/modules/app";
 
 @Component
 export default class Footer extends Mixins(Mixin) {}

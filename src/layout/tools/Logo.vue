@@ -16,7 +16,7 @@ import LogoSvg from "@/assets/logo.svg?inline";
   }
 })
 export default class Logo extends Vue {
-  @Prop({ default: "ZEUS" }) public title!: string;
+  @Prop({ default: "" }) public title!: string;
   @Prop({ default: true }) public showTitle!: boolean;
 }
 </script>
